@@ -1,0 +1,18 @@
+# Swift
+.build/
+*.o
+*.d
+*.swp
+.swiftpm/
+
+# C# / .NET
+ProcessClient/bin/
+ProcessClient/obj/
+
+# Xcode
+*.xcodeproj/
+xcuserdata/
+DerivedData/
+
+# macOS
+.DS_Store
