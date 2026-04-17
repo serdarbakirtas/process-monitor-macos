@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package processmonitor;
+
+// The service definition.
+service ProcessMonitor {
+  rpc GetProcesses (ProcessRequest) returns (ProcessResponse);
+}
+
+// Request from the client — empty; only signals "give me the list".
+message ProcessRequest {}
+
+// Response from the server — list of processes.
+message ProcessResponse {
+  repeated ProcessInfo processes = 1;
+}
+
+// Information about a single process.
+message ProcessInfo {
+  string name = 1;
+  int32 pid = 2;
+}
