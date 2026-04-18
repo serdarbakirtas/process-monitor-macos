@@ -20,5 +20,12 @@ let package = Package(
             ],
             path: "Sources/ProcessServer"
         ),
+        .testTarget(
+            name: "ProcessServerTests",
+            dependencies: [
+                .product(name: "GRPC", package: "grpc-swift"),
+            ],
+            path: "Tests/ProcessServerTests"
+        ),
     ]
 )

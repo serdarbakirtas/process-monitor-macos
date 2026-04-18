@@ -110,6 +110,27 @@ sudo launchctl unload /Library/LaunchDaemons/dev.processmonitor.plist
 sudo launchctl load /Library/LaunchDaemons/dev.processmonitor.plist
 ```
 
+## Testing
+
+The server includes unit tests for the process collection logic.
+
+```bash
+cd ProcessServer
+swift test
+```
+
+Expected output:
+
+Executed 5 tests, with 0 failures (0 unexpected)
+
+### What is tested
+
+- Process list is not empty
+- All processes have a valid PID (greater than 0)
+- All processes have a name
+- Kernel process (PID 0) is excluded from the list
+- Current running process is present in the list
+
 ## Code Signing
 
 Both binaries are signed:
