@@ -30,7 +30,7 @@ final class ProcessMonitorService: Processmonitor_ProcessMonitorAsyncProvider {
             let pid = proc.kp_proc.p_pid
             guard pid > 0 else { return nil }
 
-            var name = withUnsafeBytes(of: proc.kp_proc.p_comm) { buf in
+            let name = withUnsafeBytes(of: proc.kp_proc.p_comm) { buf in
                 String(bytes: buf.prefix(while: { $0 != 0 }), encoding: .utf8) ?? "unknown"
             }
 
